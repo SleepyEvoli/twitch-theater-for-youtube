@@ -1,0 +1,73 @@
+.youtube-twitch-theater-theme {
+    scrollbar-width: none !important;
+
+    #masthead-container {
+        display: none;
+    }
+
+    #page-manager {
+        margin-top: 0 !important;
+    }
+
+    ytd-watch-flexy {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 80% 20%;
+
+        #full-bleed-container {
+            height: 100vh !important;
+            max-height: unset !important;
+
+            .ytp-chrome-bottom {
+                width: 98% !important;
+
+                .ytp-progress-bar {
+                    .ytp-load-progress {
+                        transform: unset;
+                    }
+                }
+            }
+
+            .html5-video-container {
+                height: 100%;
+
+                video {
+                    left: 50% !important;
+                    top: 50% !important;
+                    transform: translateY(-50%) translateX(-50%) !important;
+                }
+            }
+
+            #panels-full-bleed-container {
+                display: none;
+            }
+        }
+
+        #single-column-container {
+            display: none;
+        }
+    }
+
+    #columns {
+        max-width: 100% !important;
+        padding-right: 0 !important;
+
+        #primary {
+            display: none !important;
+        }
+
+        #secondary {
+            display: none;
+        }
+
+        #chat-container {
+            max-width: 100%;
+
+            ytd-live-chat-frame {
+                position: static !important;
+                height: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    }
+}
