@@ -3,12 +3,13 @@ init();
 function init() {
     initListeners();
 
-    if (isShortVideo()) {
-        console.log('Short Video Detected');
-        addShortVideoClass();
-    }
+    const video = document.querySelector('video');
+    video.addEventListener('loadeddata', function(event) {
+        if (isShortVideo(event.target)) {
+            addShortVideoClass();
+        }
+    });
 }
-
 
 function enableTheaterTheme() {
 
@@ -45,6 +46,7 @@ function initListeners() {
             setTimeout(() => {
                 if (ytdWatchFlexy.hasAttribute('theater')) {
                     enableTheaterTheme();
+                    console.log(document.querySelector('.ytp-rounded-miniplayer-not-regular-wide-video'))
                 } else {
                     disableTheaterTheme();
                 }
@@ -59,13 +61,9 @@ function initListeners() {
     }
 }
 
-function isShortVideo() {
+function isShortVideo(target) {
 
-    const video = document.querySelector('video');
-    const videoWidth = video.videoWidth;
-    const videoHeight = video.videoHeight;
-
-    if (videoWidth < videoHeight) {
+    if (target.videoWidth < target.videoHeight) {
         return true;
     }
 
