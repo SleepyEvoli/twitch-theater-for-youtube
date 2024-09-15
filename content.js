@@ -2,6 +2,11 @@ init();
 
 function init() {
     initListeners();
+
+    if (isShortVideo()) {
+        console.log('Short Video Detected');
+        addShortVideoClass();
+    }
 }
 
 
@@ -52,4 +57,21 @@ function initListeners() {
             disableTheaterTheme();
         });
     }
+}
+
+function isShortVideo() {
+
+    const video = document.querySelector('video');
+    const videoWidth = video.videoWidth;
+    const videoHeight = video.videoHeight;
+
+    if (videoWidth < videoHeight) {
+        return true;
+    }
+
+    return false;
+}
+
+function addShortVideoClass() {
+    document.querySelector('.html5-video-container').classList.add('youtube-twitch-short-video');
 }
