@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Twitch Theater Mode for Youtube Live",
   "author": "SleepyEvoli",
-  "version": "1.1",
+  "version": "1.1.1",
   "description": "Make the Theater Mode similar to Twitch.",
   "permissions": [
     "activeTab"
@@ -28,5 +28,10 @@
     "128": "./icons/icon-128.png"
   },
   "minimum_chrome_version": "128",
-  "short_name": "YTTW-Theater"
+  "short_name": "YTTW-Theater",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "twitch-theater-for-youtube-id@sleepyevoli.com"
+    }
+  }
 }
